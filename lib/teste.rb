@@ -1,18 +1,8 @@
 require File.expand_path('lib/loja_virtual')
 
+teste_e_design = Livro.new "TDD", "Mauricio Aniche", "123454",
+247, 69.9, :testes
 biblioteca = Biblioteca.new
+biblioteca.adiciona teste_e_design
 
-teste_e_design = Livro.new "TDD", "Mauricio Aniche", 247, 70.5,:teste,"123454"
-web_design_responsivo = Livro.new "Design Responsivo" , "Tárcio Zemel", 189, 67.9, :design, "452565"
-
-biblioteca.adiciona(teste_e_design)
-biblioteca.adiciona(web_design_responsivo)
-
-imprime_livro_no_console = Proc.new do |livro|
-  p livro.autor
-end
-
-imprime_livro_no_console_c = lambda do |livro|
-  p livro.autor
-end
 
