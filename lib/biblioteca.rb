@@ -2,11 +2,14 @@ class Biblioteca
   
   def initialize
     @livros = {}
+    @banco_de_arquivos = BancoDeArquivos.new
   end
   
   def adiciona(livro)
-    @livros[livro.categoria] ||= []
-    @livros[livro.categoria] << livro
+    salva livro do 
+      @livros[livro.categoria] ||= []
+      @livros[livro.categoria] << livro    
+    end
   end
   
   def livros
@@ -21,4 +24,9 @@ class Biblioteca
     end
   end
   
+ private
+  def salva(livro)
+    @banco_de_arquivos.salva livro
+    yield
+  end  
 end
