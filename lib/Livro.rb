@@ -1,8 +1,7 @@
 # coding: utf-8
 
-class Livro
-  attr_accessor :valor, :categoria
-  attr_reader :isbn, :autor, :titulo
+class Livro < Midia
+  attr_reader :categoria, :autor
   
   def initialize(titulo,autor,numero_de_paginas,valor,categoria,isbn="1")
     @titulo = titulo
